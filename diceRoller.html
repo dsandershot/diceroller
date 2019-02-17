@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dice Roller</title>
+</head>
+<body>
+	<!-- d4 -->
+	<form id="d4Form">
+		<input type="text" name="d4quantity" id="d4quantity" value="1">
+		<label for="d4modifier">d4 + </label>
+		<input type="text" name="d4modifier" id="d4modifier" value="0">
+		<button type="submit">Roll!</button>
+		<span id="d4Result">0</span>
+	</form>
+
+	<!-- d6 -->
+	<form id="d6Form">
+		<input type="text" name="d6quantity" id="d6quantity" value="1">
+		<label for="d4modifier">d6 + </label>
+		<input type="text" name="d6modifier" id="d6modifier" value="0">
+		<button type="submit">Roll!</button>
+		<span id="d6Result">0</span>
+	</form>
+
+	<!-- d8 -->
+	<form id="d8Form">
+		<input type="text" name="d8quantity" id="d8quantity" value="1">
+		<label for="d8modifier">d8 + </label>
+		<input type="text" name="d8modifier" id="d8modifier" value="0">
+		<button type="submit">Roll!</button>
+		<span id="d8Result">0</span>
+	</form>
+
+	<!-- d10 -->
+	<form id="d10Form">
+		<input type="text" name="d10quantity" id="d10quantity" value="1">
+		<label for="d10modifier">d10 + </label>
+		<input type="text" name="d10modifier" id="d10modifier" value="0">
+		<button type="submit">Roll!</button>
+		<span id="d10Result">0</span>
+	</form>
+
+	<!-- d12 -->
+	<form id="d12Form">
+		<input type="text" name="d12quantity" id="d12quantity" value="1">
+		<label for="d12modifier">d12 + </label>
+		<input type="text" name="d12modifier" id="d12modifier" value="0">
+		<button type="submit">Roll!</button>
+		<span id="d12Result">0</span>
+	</form>
+
+	<!-- d20 -->
+	<form id="d20Form">
+		<input type="text" name="d20quantity" id="d20quantity" value="1">
+		<label for="d20modifier">d20 + </label>
+		<input type="text" name="d20modifier" id="d20modifier" value="0">
+		<button type="submit">Roll!</button>
+		<span id="d20Result">0</span>
+	</form>
+
+	<!-- d100 -->
+	<form id="d100Form">
+		<input type="text" name="d100quantity" id="d100quantity" value="1">
+		<label for="d100modifier">d100 + </label>
+		<input type="text" name="d100modifier" id="d100modifier" value="0">
+		<button type="submit">Roll!</button>
+		<span id="d100Result">0</span>
+	</form>
+</body>
+
+<script type="text/javascript">
+
+	function rollDice(quantity,modifier,diceNumber){
+		// casting to numbers for Math
+		let theQuantity = Number(quantity);
+		let theModifier = Number(modifier);
+
+		if(Number.isNaN(theQuantity)){
+			alert(quantity+' is not a valid number of dice. How the heck does one roll '+quantity+' dice?');
+			console.log('quantity fail');
+		}else if(Number.isNaN(theModifier)){
+			alert(modifier+' is not a valid modifier');
+			console.log('mod fail');
+		}else{
+			let result = theQuantity*(Math.floor(Math.random()*diceNumber)+1+theModifier);
+			document.getElementById('d'+diceNumber+'Result').innerHTML = result;
+		}
+	}
+
+	function getDiceRoll(diceNumber,callback){
+		// read in values here
+		let quantity1 = document.getElementById('d'+diceNumber+'quantity').value;
+		let modifier1 = document.getElementById('d'+diceNumber+'modifier').value;
+		
+		// confirming function
+		if(typeof callback === 'function'){
+			callback(quantity1,modifier1,diceNumber);
+		}else{
+			console.log('not a function');
+		}
+	}
+
+	// listeners
+	let d4 = document.getElementById('d4Form');
+	d4.addEventListener('submit', function(event){getDiceRoll(4,rollDice); event.preventDefault();} );
+
+	let d6 = document.getElementById('d6Form');
+	d6.addEventListener('submit', function(event){getDiceRoll(6,rollDice); event.preventDefault();} );
+
+	let d8 = document.getElementById('d8Form');
+	d8.addEventListener('submit', function(event){getDiceRoll(8,rollDice); event.preventDefault();} );
+
+	let d10 = document.getElementById('d10Form');
+	d10.addEventListener('submit', function(event){getDiceRoll(10,rollDice); event.preventDefault();} );
+
+	let d12 = document.getElementById('d12Form');
+	d12.addEventListener('submit', function(event){getDiceRoll(12,rollDice); event.preventDefault();} );
+
+	let d20 = document.getElementById('d20Form');
+	d20.addEventListener('submit', function(event){getDiceRoll(20,rollDice); event.preventDefault();} );
+
+	let d100 = document.getElementById('d100Form');
+	d100.addEventListener('submit', function(event){getDiceRoll(100,rollDice); event.preventDefault();} );
+</script>
+</html>
