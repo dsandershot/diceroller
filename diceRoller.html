@@ -82,8 +82,19 @@
 			alert(modifier+' is not a valid modifier');
 			console.log('mod fail');
 		}else{
-			let result = theQuantity*(Math.floor(Math.random()*diceNumber)+1+theModifier);
-			document.getElementById('d'+diceNumber+'Result').innerHTML = result;
+			// rolling each die individually instead of using multiplication is more accurate to the intention of rolling dice
+			// user may check the console to see individual dice rolls
+			let total = 0;
+			console.log('rolling '+quantity+' d'+diceNumber+' plus '+modifier);
+			for(i=0;i<theQuantity;i++){
+				let result = Math.floor(Math.random()*diceNumber)+1;
+				total += result;
+				console.log(result);
+			}
+			total += theModifier;
+			console.log('plus '+modifier);
+			console.log('total is '+total);
+			document.getElementById('d'+diceNumber+'Result').innerHTML = total;
 		}
 	}
 
