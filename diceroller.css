@@ -1,0 +1,23 @@
+body {
+	background-image: radial-gradient(orange, black);
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+div {
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 800px;
+	padding: 30px;
+	display: inline-block;
+}
+
+#forms {
+
+}
+
+label {
+	width: 15px;
+}
