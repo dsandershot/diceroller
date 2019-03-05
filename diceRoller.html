@@ -6,14 +6,18 @@
 </head>
 <body>
 	<main>
-		<div>
+		<div id="diceBlock">
+			<div id="labelBlock">
+				<p id="leftLabel" class="diceLabel">Number of Dice</p>
+				<p id="rightLabel" class="diceLabel">Modifier</p>
+			</div>
 			<!-- d4 -->
 			<form id="d4Form" class="forms">
 				<input type="text" name="d4quantity" id="d4quantity" value="1">
 				<label for="d4modifier">d4 + </label>
 				<input type="text" name="d4modifier" id="d4modifier" value="0">
 				<button type="submit">Roll!</button>
-				<span id="d4Result">0</span>
+				<span id="d4Result" class="result">0</span>
 			</form>
 
 			<!-- d6 -->
@@ -22,7 +26,7 @@
 				<label for="d4modifier">d6 + </label>
 				<input type="text" name="d6modifier" id="d6modifier" value="0">
 				<button type="submit">Roll!</button>
-				<span id="d6Result">0</span>
+				<span id="d6Result" class="result">0</span>
 			</form>
 
 			<!-- d8 -->
@@ -31,7 +35,7 @@
 				<label for="d8modifier">d8 + </label>
 				<input type="text" name="d8modifier" id="d8modifier" value="0">
 				<button type="submit">Roll!</button>
-				<span id="d8Result">0</span>
+				<span id="d8Result" class="result">0</span>
 			</form>
 
 			<!-- d10 -->
@@ -40,7 +44,7 @@
 				<label for="d10modifier">d10 + </label>
 				<input type="text" name="d10modifier" id="d10modifier" value="0">
 				<button type="submit">Roll!</button>
-				<span id="d10Result">0</span>
+				<span id="d10Result" class="result">0</span>
 			</form>
 
 			<!-- d12 -->
@@ -49,7 +53,7 @@
 				<label for="d12modifier">d12 + </label>
 				<input type="text" name="d12modifier" id="d12modifier" value="0">
 				<button type="submit">Roll!</button>
-				<span id="d12Result">0</span>
+				<span id="d12Result" class="result">0</span>
 			</form>
 
 			<!-- d20 -->
@@ -58,7 +62,7 @@
 				<label for="d20modifier">d20 + </label>
 				<input type="text" name="d20modifier" id="d20modifier" value="0">
 				<button type="submit">Roll!</button>
-				<span id="d20Result">0</span>
+				<span id="d20Result" class="result">0</span>
 			</form>
 
 			<!-- d100 -->
@@ -67,7 +71,7 @@
 				<label for="d100modifier">d100 + </label>
 				<input type="text" name="d100modifier" id="d100modifier" value="0">
 				<button type="submit">Roll!</button>
-				<span id="d100Result">0</span>
+				<span id="d100Result" class="result">0</span>
 			</form>
 		</div>
 	</main>
