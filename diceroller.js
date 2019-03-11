@@ -13,15 +13,15 @@ function rollDice(quantity,modifier,diceNumber){
 		// rolling each die individually instead of using multiplication is more accurate to the intention of rolling dice
 		// user may check the console to see individual dice rolls
 		let total = 0;
-		console.log('rolling '+quantity+' d'+diceNumber+' plus '+modifier);
+		document.getElementById('resultsWindow').innerHTML += 'rolling '+quantity+' d'+diceNumber+' plus '+modifier;
 		for(i=0;i<theQuantity;i++){
 			let result = Math.floor(Math.random()*diceNumber)+1;
 			total += result;
-			console.log(result);
+			document.getElementById('resultsWindow').innerHTML += '<br>'+result;
 		}
 		total += theModifier;
-		console.log('plus '+modifier);
-		console.log('total is '+total);
+		document.getElementById('resultsWindow').innerHTML += '<br>plus '+modifier+'<br>';
+		document.getElementById('resultsWindow').innerHTML += 'total is '+total+'<br>';
 		document.getElementById('d'+diceNumber+'Result').innerHTML = total;
 	}
 }
@@ -37,6 +37,10 @@ function getDiceRoll(diceNumber,callback){
 	}else{
 		console.log('not a function');
 	}
+}
+
+function clearElement(name) {
+	document.getElementById(name).innerHTML = '&nbsp;';
 }
 
 // listeners
