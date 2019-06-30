@@ -23,6 +23,10 @@ function rollDice(quantity,modifier,diceNumber){
 		document.getElementById('resultsWindow').innerHTML += '<br>plus '+modifier+'<br>';
 		document.getElementById('resultsWindow').innerHTML += 'total is '+total+'<br>';
 		document.getElementById('d'+diceNumber+'Result').innerHTML = total;
+		
+		// scroll to bottom of results window everytime it updates
+		let scrollDown = document.getElementById('resultsWindow');
+		scrollDown.scroll(0,scrollDown.scrollHeight);
 	}
 }
 
