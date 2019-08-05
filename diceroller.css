@@ -19,6 +19,10 @@ h1 {
 	text-align: center;
 }
 
+input {
+	width: calc(50% - 100px);
+}
+
 label {
 	display: inline-block;
 	width: 64px;
@@ -42,18 +46,18 @@ p {
 #diceBlock {
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.7);
-	width: 600px;
-	padding: 30px;
+	max-width: 600px;
+	width: 100%;
 	padding-top: 10px;
 	display: inline-block;
 }
 
 #diceImageBlock {
-	width: 500px;
+	max-width: 500px;
+	width: 100%;
 	padding: 0;
 	margin: 0;
-	margin-top: 15px;
-	margin-left: 50px;
+	display: inline-block;
 	text-align: center;
 }
 
@@ -62,11 +66,12 @@ p {
 }
 
 #resultsWindow {
-	width: 480px;
+	max-width: 480px;
+	width: 100%;
+	display: inline-block;
 	height: 150px;
 	background-color: rgba(255, 255, 255, 0.7);
 	text-align: left;
-	margin-left: 60px;
 	padding: 4px;
 	color: black;
 	font-size: 12px;
@@ -80,11 +85,12 @@ p {
 
 #labelBlock {
 	display: inline-block;
-	width: 410px;
+	max-width: 410px;
+	width: 100%;
 }
 
 .diceImage{
-	width: 65px;
+	width: 13%;
 	display: inline-block;
 	padding: 0;
 	margin: 0;
@@ -104,4 +110,8 @@ p {
 	color: #ffffff;
 	font-size: 20px;
 	vertical-align: center;
+}
+
+@media (max-width: 650px){
+
 }
